@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-html-local-image-plugin",
+	"name": "HtmlLocalImage",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "Displays HTML image tags when the source is local.",
+	"author": "RDR",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}

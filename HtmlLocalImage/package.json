@@ -1,0 +1,34 @@
+{
+  "name": "html-local-image",
+  "version": "1.0.0",
+  "description": "A plugin for Obsidian that displays image tags appropriately when the image source is local.",
+  "main": "build/main.js",
+  "scripts": {
+    "dev": "node esbuild.config.mjs",
+    "build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
+    "version": "node version-bump.mjs && git add manifest.json versions.json"
+  },
+  "keywords": [
+    "obsidian",
+    "image",
+    "html",
+    "source",
+    "img",
+    "src"
+  ],
+  "author": "RDR",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^18.15.0",
+    "is-url": "^1.2.4",
+    "obsidian": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/is-url": "^1.2.30",
+    "builtin-modules": "^3.3.0",
+    "esbuild": "^0.17.11",
+    "ts-node": "^10.9.1",
+    "tslib": "^2.5.0",
+    "typescript": "^4.9.5"
+  }
+}

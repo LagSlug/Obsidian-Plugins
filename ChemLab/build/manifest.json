@@ -1,0 +1,11 @@
+{
+	"id": "obsidian-chemlab-plugin",
+	"name": "ChemLab",
+	"version": "1.0.0",
+	"minAppVersion": "0.15.0",
+	"description": "A utility for creating chemistry related notes.",
+	"author": "Obsidian",
+	"authorUrl": "",
+	"fundingUrl": "",
+	"isDesktopOnly": false
+}
