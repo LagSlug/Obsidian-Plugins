@@ -47,18 +47,21 @@ export default class HtmlLocalSrcPlugin extends Plugin {
       // assume that images with valid URIs are external, so can be left alone.
       if (isUrl(src)) return;
 
+      var schema = "", resourcePath = "";
       // the image has an absolute path
       if (path.isAbsolute(src)) {
-        const prefix = getUriPrefix(rootPath);
-        const pathBody = rootPath.substring(prefix.length);
-        img.srcset = prefix + path.join(pathBody, src);
+        schema = getUriPrefix(rootPath);
+        resourcePath = rootPath.substring(schema.length);
       }
       // the image has a relative path
       else {
-        const prefix = getUriPrefix(directoryPath);
-        const pathBody = directoryPath.substring(prefix.length);
-        img.srcset = prefix + path.join(pathBody, src);
+        schema = getUriPrefix(directoryPath);
+        resourcePath = directoryPath.substring(schema.length);
       }
+
+      // decode and then encode the uri to make sure we don't re-encode already encoded characters
+      var encodedSrc = encodeURI(decodeURI(src));
+      img.srcset = schema + path.join(resourcePath, encodedSrc);
 
     });
   }
